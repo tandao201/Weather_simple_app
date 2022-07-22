@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/day_image"
+    android:id="@+id/relativeLayoutMain"
+
+    android:animateLayoutChanges="true"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutWrapper"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchViewCity"
+            style="@style/custom_search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_search_bg"
+            app:iconifiedByDefault="false"
+            app:queryBackground="@null"
+            app:queryHint="@string/query_hint"
+            app:submitBackground="@null" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/searchViewCity">
+
+            <RelativeLayout
+                android:id="@+id/infoGroupCity"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp">
+
+                <TextView
+                    android:id="@+id/textViewCityName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/montserrat_custom"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="Ha Noi, "
+                    android:textColor="@color/white"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:id="@+id/textViewCountryName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textViewCityName"
+                    android:layout_centerHorizontal="true"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/montserrat_custom"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="VN"
+                    android:textColor="@color/white"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:id="@+id/textViewTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textViewCountryName"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/montserrat_custom"
+                    android:text="12:00:20"
+                    android:textColor="@color/white"
+                    android:textSize="25dp" />
+
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/infoGroupCity"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/white_low_opacity"
+                app:cardCornerRadius="15dp">
+
+                <TextView
+                    android:id="@+id/textViewTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:text="23 o C"
+                    android:textColor="@color/gray"
+                    android:textSize="60sp" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textViewState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardViewTemp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxWidth="300dp"
+                android:text="Clouds"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
+            <LinearLayout
+                android:id="@+id/infoOther"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewState"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:weightSum="9">
+
+                <LinearLayout
+                    android:id="@+id/itemOtherView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/ic_eye" />
+
+                    <TextView
+                        android:id="@+id/textViewValueView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1000m"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/itemOtherWind"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/ic_wind" />
+
+                    <TextView
+                        android:id="@+id/textViewValueWind"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1000m"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/itemOtherHumid"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/ic_cloud" />
+
+                    <TextView
+                        android:id="@+id/textViewValueHumid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1000m"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:layout_width="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/progress_circular"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:indicatorColor="@color/white"
+            android:indeterminate="true" />
+
+    </RelativeLayout>
+
+</ScrollView>
